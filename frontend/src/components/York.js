@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import { Tabs} from 'antd';
+import { Input, Tabs } from 'antd';
 import { TabsProps } from 'antd';
 
 import Box from '@mui/material/Box';
@@ -13,6 +13,10 @@ import {
   GithubOutlined,
   MailOutlined,
 } from '@ant-design/icons';
+
+import axios from 'axios';
+
+const { Search } = Input;
 
 const onChange = (key) => {
   console.log(key);
@@ -30,6 +34,31 @@ const style = {
   p: 4,
 };
 
+const onSearch = (value, _e, info) => {
+     axios.get('/city/search?q=london')
+     .then(function (response) {
+         console.log(response.data.data)
+         const data = response.data.data
+         console.log(data)
+         //const arr = data.log.split("|");
+         //let msg = "";
+         //for (let k in arr) {
+         //    let v = arr[k];
+         //    msg += v + " <br>";
+         //}
+         //that.setState({
+         //    gold: data.gold,
+         //    money: data.money,
+         //    log: msg,
+         //});
+     })
+     .catch(function (error) {
+         console.log(error);
+     })
+     .finally(function () {
+     });
+    console.log(info.source, value);
+}
 
 const Home = (
   <div className="home">
@@ -44,6 +73,8 @@ const Home = (
       </div>
       <div className='home-header-content'>
         <div className='home-header-left'>
+            <Search placeholder="input search text" onChange={onSearch} enterButton />
+
           <p>
     aaa
         </p>

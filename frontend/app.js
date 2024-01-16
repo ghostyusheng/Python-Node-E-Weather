@@ -2,11 +2,20 @@ var express = require('express');
 var app = express();
 var path = require('path');
 var engines = require('consolidate');
+
+const proxy = require("http-proxy-middleware").createProxyMiddleware;
+
 const BASE_DIR = __dirname
 
 const print = (what) => {
     return console.log(what)
 }
+
+app.use(
+  "/",
+  proxy([`/proxy/**`], { target: `http://127.0.0.1:5000` })
+);
+
 
 
 app.set('views', path.join(BASE_DIR + '/build'));
