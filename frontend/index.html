@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resume</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    input:focus {
+        border: 0px;
+        outline-color: black;
+    }
+    .header{
+        width: 100%;
+        height: 350px;
+        background-image: url('https://xdfeeds.s3.cn-northwest-1.amazonaws.com.cn/static/ab65fc5b89de51b9e9de6e25d198854d.jpg');
+        background-position-y: -400px;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .book {
+        position: absolute;
+        left: 400px;
+        top: 283px;
+    }
+    .main {
+        width: 80%;
+        padding: 50px;
+        height: 600px;
+    }
+    .list {
+        text-decoration: none;
+        margin-top: 55px;
+        text-indent: 100px;
+    }
+    .list > li {
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 10px;
+    }
+    .list > li:nth-child(1) {
+        font-weight: bold;
+        font-size: 20px;
+        height: 40px;
+        border-bottom: 1px solid #d6d6d6;
+    }
+    .list > li span {
+        display: inline-block;
+        white-space: nowrap;
+    }
+    .search-bar{
+        padding-left: 20px;
+        width: 601px;
+        height: 53px;
+        border-radius: 25px;
+        border-style: none;
+        border: 1px solid #efeaea;
+        margin: 0 auto;
+        display: block;
+    }
+    .search-res {
+        display: inline-block;
+        position: relative;
+        left: 185px;
+        font-size: 30px;
+        color: black;
+        font-weight: 400;
+        margin-bottom: 23px;
+    }
+    .search {
+        display: flex;
+        justify-content: center;
+    }
+    .span_group > span {
+        width: 500px;
+    }
+    .history {
+        list-style: none;
+        position: absolute;
+        left: 10px;
+        width: 300px;
+        top: 500px;
+    }
+    .history > li {
+        color: gray;
+    }
+    .pause {
+        cursor: pointer;
+        color: red;
+        background-color: white;
+        border:1px solid black;
+        width: 100px;
+        height: 41px;
+        border-radius: 7px;
+    }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img class="book" src="https://xdfeeds.s3.cn-northwest-1.amazonaws.com.cn/static/3e81ce28cdb6a8027dcc87a6f6415e04.png" alt="" />
+    </header>
+    <div class="search">
+        <div class="main">
+            <div id="root"></div>
+        </div>
+    </div>
+</body>
+</html>
