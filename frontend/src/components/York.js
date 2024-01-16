@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { Input, Tabs } from 'antd';
 import { TabsProps } from 'antd';
+import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
+import { Avatar, Card } from 'antd';
+const { Meta } = Card;
+
 
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -76,7 +80,29 @@ const Home = (
             <Search placeholder="input search text" onChange={onSearch} enterButton />
 
           <p>
-    aaa
+    <Card
+    style={{
+      width: 300,
+    }}
+    cover={
+      <img
+        alt="example"
+        src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+      />
+    }
+    actions={[
+      <SettingOutlined key="setting" />,
+      <EditOutlined key="edit" />,
+      <EllipsisOutlined key="ellipsis" />,
+    ]}
+  >
+    <Meta
+      avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
+      title="London"
+      description="This is the description"
+    />
+  </Card>
+
         </p>
         </div>
         <div className='home-header-right'>

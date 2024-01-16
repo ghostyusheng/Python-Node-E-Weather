@@ -42,6 +42,7 @@ p{word-wrap:break-word}
 .home-header-left {
   font-size: 18px;
   text-indent: 22px;
+  width: 70vw;
 }
 
 .home-header-right {
