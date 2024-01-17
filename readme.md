@@ -118,3 +118,4 @@ Weather User-Friendly Interface, Functions
 1. PYTHON production WSGI(current version like demo)
 2. Frontend code tidy
 3. Add download option
+4. Fuzzy city search
