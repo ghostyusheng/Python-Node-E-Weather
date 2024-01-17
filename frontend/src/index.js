@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import ReactDom from 'react-dom';
 import { Route, HashRouter, hashHistory, IndexRoute } from 'react-router-dom'
 import York from './components/York'
+import Detail from './components/Detail'
 import 'normalize.css';
 //import 'antd/dist/antd.min.css';
 import css from '../public/base.css';
@@ -62,8 +63,7 @@ class NoMatch extends Component {
 
 render((
   <HashRouter>
-     <Route path='/yusheng' component={York} />
-     <Route path='/aa' component={User} />
-     <Route path='/bb' component={About} />
+     <Route path='/home' component={York} />
+     <Route path='/detail' component={Detail} />
   </HashRouter>
 ), document.getElementById('root'))

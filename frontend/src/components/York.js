@@ -126,6 +126,7 @@ export default class York extends Component {
                     <Search placeholder="input search text" onSearch={this.onSearch} enterButton />
                     {this.state && this.state.icon ? 
                       <Card
+                      onClick={console.log('jump')}
                       className='card'
                       style={{
                         width: 300,
