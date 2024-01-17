@@ -191,3 +191,7 @@ p{word-wrap:break-word}
 .card {
   margin: 20px 42px;
 }
+
+.card-img {
+  object-fit: none;
+}

@@ -11,4 +11,8 @@ class CityService(BaseService):
         res = json.loads(r.content)[0]
         if res.get('local_names'):
             del res['local_names']
-        return res
+        uri_detail = Engine.onecall.format(LON=res.get('lon',0), LAT=res.get('lat',0))
+        r2 = requests.get(uri_detail)
+        res_detail = json.loads(r2.content)
+        #print(json.dumps(res_detail))
+        return {'basic': res, 'detail': res_detail}

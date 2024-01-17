@@ -59,20 +59,18 @@ export default class York extends Component {
              const data = response.data.data
              console.log(data)
              that.setState({
-                 country: data.country,
+                 country: data.basic.country,
                  lat: data.lat,
                  lon: data.lon,
-                 name: data.name,
-                 state: data.state,
+                 name: data.basic.name,
+                 state: data.basic.state,
+                 icon: data.detail.current.weather[0].icon,
              });
-             that.forceUpdate()
          })
          .catch(function (error) {
              console.log(error);
          })
          .finally(function () {
-             console.log('force update!', that)
-             that.forceUpdate()
          });
     }
 
@@ -123,30 +121,34 @@ export default class York extends Component {
               <div className='home-header-content'>
                 <div className='home-header-left'>
                     <Search placeholder="input search text" onSearch={this.onSearch} enterButton />
-
-                    <Card
-                    className='card'
-                    style={{
-                      width: 300,
-                    }}
-                    cover={
-                      <img
-                        alt="example"
-                        src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+                    {this.state && this.state.icon ? 
+                      <Card
+                      className='card'
+                      style={{
+                        width: 300,
+                      }}
+                      cover={
+                        <img
+                          className='card-img'
+                          alt="example"
+                          src={`https://openweathermap.org/img/wn/${this.state && this.state.icon ? this.state.icon : '01d'}@2x.png`} 
+                        />
+                      }
+                      actions={[
+                        <SettingOutlined key="setting" />,
+                        <EditOutlined key="edit" />,
+                        <EllipsisOutlined key="ellipsis" />,
+                      ]}
+                    >
+                      <Meta
+                        avatar={<Avatar src={`https://openweathermap.org/img/wn/${this.state.icon}@2x.png`} />}
+                        title={this.state.name}
+                        description={this.state.country+" "+this.state.state}
                       />
-                    }
-                    actions={[
-                      <SettingOutlined key="setting" />,
-                      <EditOutlined key="edit" />,
-                      <EllipsisOutlined key="ellipsis" />,
-                    ]}
-                  >
-                    <Meta
-                      avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
-                      title={this.state.name}
-                      description={this.state.country+" "+this.state.state}
-                    />
-                  </Card>
+                    </Card>
+                    :
+                    <></>
+    }
 
                 </div>
             <div className='home-header-right'>
