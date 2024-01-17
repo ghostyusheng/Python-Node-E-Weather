@@ -23,6 +23,7 @@ import {
 } from '@ant-design/icons';
 
 import axios from 'axios';
+import { useThemeProps } from '@mui/material';
 
 const { Search } = Input;
 
@@ -73,9 +74,14 @@ export default class York extends Component {
               description: data.detail.current.weather[0].description,
               daily: data.detail.daily,
             }
+             let day4_7= JSON.parse(JSON.stringify(tmpState));
+             tmpState.daily = tmpState.daily.slice(0, 4)
+             day4_7.daily = day4_7.daily.slice(4,8)
+             cookies.set('day0_3', tmpState);
+             cookies.set('day4_7', day4_7.daily);
+
              that.setState(tmpState);
-             cookies.set('myCat', 'Pacman');
-             console.log(cookies.get('myCat')); // Pacman
+
          })
          .catch(function (error) {
              console.log(error);
@@ -130,7 +136,7 @@ export default class York extends Component {
             <div className='home-header'>
               <div className='home-header-content'>
                 <div className='home-header-left'>
-                    <Search placeholder="input search text" onSearch={this.onSearch} enterButton />
+                    <Search placeholder="input city name" onSearch={this.onSearch} enterButton />
                     {this.state && this.state.icon ? 
                       <Card
                       onClick={console.log('jump')}
