@@ -120,64 +120,53 @@ export default class York extends Component {
             const Home = (
           <div className="home">
             <div className='home-header'>
-              <div className='home-header-name'>
-                <div className='home-header-english'>
-                  Yusheng Zhang
-                </div>
-                <div className='home-header-chinese'>
-                 yusheng
-                </div>
-              </div>
               <div className='home-header-content'>
                 <div className='home-header-left'>
                     <Search placeholder="input search text" onSearch={this.onSearch} enterButton />
 
-                  <p>
-            <Card
-            style={{
-              width: 300,
-            }}
-            cover={
-              <img
-                alt="example"
-                src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
-              />
-            }
-            actions={[
-              <SettingOutlined key="setting" />,
-              <EditOutlined key="edit" />,
-              <EllipsisOutlined key="ellipsis" />,
-            ]}
-          >
-                <b>{console.log('加载',this.state)}</b>
-            <Meta
-              avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
-              title={this.state && this.state.name? this.state.name : 'default'}
-              description="This is the description"
-            />
-          </Card>
+                    <Card
+                    className='card'
+                    style={{
+                      width: 300,
+                    }}
+                    cover={
+                      <img
+                        alt="example"
+                        src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
+                      />
+                    }
+                    actions={[
+                      <SettingOutlined key="setting" />,
+                      <EditOutlined key="edit" />,
+                      <EllipsisOutlined key="ellipsis" />,
+                    ]}
+                  >
+                    <Meta
+                      avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
+                      title={this.state.name}
+                      description={this.state.country+" "+this.state.state}
+                    />
+                  </Card>
 
-                </p>
                 </div>
             <div className='home-header-right'>
-              <img height="200" width="200" src="avt2.jpg" />
+              <img height="160" width="160" src="avt2.jpg" />
               <div className='home-header-right-mail'>
                 <MailOutlined />&nbsp;
                 <a target="_blank" href="mailto:ghostyusheng@gmail.com">ghostyusheng@gmail.com</a>
               </div>
+              <div className="home-icons-motto">
+                <div>
+                  <a target="_blank" href="cv.pdf"><img height="50" src="cv.png"></img></a>
+                  <a target="_blank" href="https://github.com/ghostyusheng"><GithubOutlined style={{fontSize: '40px'}} /></a>
+                </div>
+                <div>
+                  "If you afraid of failure, you won't get very far." - Steve Jobs<br/>
+                </div>
+              </div>
+        </div>
             </div>
           </div>
-        </div>
-        <div className="home-icons-motto">
-          <div>
-            <a target="_blank" href="cv.pdf"><img height="50" src="cv.png"></img></a>
-            <a target="_blank" href="https://github.com/ghostyusheng"><GithubOutlined style={{fontSize: '40px'}} /></a>
-          </div>
-          <div>
-            "If you afraid of failure, you won't get very far." - Steve Jobs<br/>
-            "Believe can move mountain."
-          </div>
-        </div>
         </div>
         )
 
@@ -186,7 +175,7 @@ export default class York extends Component {
         const items = [
           {
             key: '1',
-            label: 'Home',
+            label: 'E-Weather Search',
             children: Home,
           },
         ];

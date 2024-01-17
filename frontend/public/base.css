@@ -48,6 +48,7 @@ p{word-wrap:break-word}
 .home-header-right {
   padding: 30px;
   text-align: center;
+  margin-top: 20px;
 }
 
 .home-header-right-mail {
@@ -66,6 +67,7 @@ p{word-wrap:break-word}
   align-items: center;
   justify-content: space-between;
   height: 50px;
+  margin-top: 25px;
 }
 
 .home-icons-motto a {
@@ -184,4 +186,8 @@ p{word-wrap:break-word}
   font-style: italic;
   font-size: 14px;
   margin: 10px 0;
+}
+
+.card {
+  margin: 20px 42px;
 }
