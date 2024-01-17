@@ -65,6 +65,9 @@ export default class York extends Component {
                  name: data.basic.name,
                  state: data.basic.state,
                  icon: data.detail.current.weather[0].icon,
+                 temp:  data.detail.current.temp,
+                 description: data.detail.current.weather[0].description,
+                 daily: data.detail.daily,
              });
          })
          .catch(function (error) {
@@ -135,15 +138,16 @@ export default class York extends Component {
                         />
                       }
                       actions={[
-                        <SettingOutlined key="setting" />,
-                        <EditOutlined key="edit" />,
-                        <EllipsisOutlined key="ellipsis" />,
                       ]}
                     >
                       <Meta
-                        avatar={<Avatar src={`https://openweathermap.org/img/wn/${this.state.icon}@2x.png`} />}
                         title={this.state.name}
-                        description={this.state.country+" "+this.state.state}
+                        description={<>
+                          <div>{this.state.country+" "+this.state.state}</div>
+                          <div>{this.state.temp+"℃"}</div>
+                          <div>{this.state.description}</div>
+                          <div>{this.state.daily[0].temp.min+'℃~'+this.state.daily[0].temp.max+'℃'}</div>
+                        </>}
                       />
                     </Card>
                     :

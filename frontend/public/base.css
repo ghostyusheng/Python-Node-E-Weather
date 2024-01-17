@@ -190,6 +190,7 @@ p{word-wrap:break-word}
 
 .card {
   margin: 20px 42px;
+  text-align: center;
 }
 
 .card-img {
