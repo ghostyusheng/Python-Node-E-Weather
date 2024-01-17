@@ -5,6 +5,9 @@ import { Input, Tabs } from 'antd';
 import { TabsProps } from 'antd';
 import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
 import { Avatar, Card } from 'antd';
+import Cookies from 'universal-cookie';
+const cookies = new Cookies(null, { path: '/' });
+
 const { Meta } = Card;
 
 
@@ -59,17 +62,20 @@ export default class York extends Component {
              console.log(response.data.data)
              const data = response.data.data
              console.log(data)
-             that.setState({
-                 country: data.basic.country,
-                 lat: data.lat,
-                 lon: data.lon,
-                 name: data.basic.name,
-                 state: data.basic.state,
-                 icon: data.detail.current.weather[0].icon,
-                 temp:  data.detail.current.temp,
-                 description: data.detail.current.weather[0].description,
-                 daily: data.detail.daily,
-             });
+             let tmpState = {
+              country: data.basic.country,
+              lat: data.lat,
+              lon: data.lon,
+              name: data.basic.name,
+              state: data.basic.state,
+              icon: data.detail.current.weather[0].icon,
+              temp:  data.detail.current.temp,
+              description: data.detail.current.weather[0].description,
+              daily: data.detail.daily,
+            }
+             that.setState(tmpState);
+             cookies.set('myCat', 'Pacman');
+             console.log(cookies.get('myCat')); // Pacman
          })
          .catch(function (error) {
              console.log(error);

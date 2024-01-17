@@ -16,6 +16,7 @@ module.exports = {
     ],
     module: {
         rules: [
+            { test: /\.mjs$/, include: /node_modules/, type: 'javascript/auto' },
             {
                 test: /\.js$/, // include .js files
                 enforce: "pre", // preload the jshint loader
