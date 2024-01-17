@@ -121,7 +121,8 @@ Weather User-Friendly Interface, Functions
 
 ### Todo List
 
-1. PYTHON production WSGI(current version like demo)
+1. PYTHON production WSGI(current version like demo) Done.
 2. Frontend code tidy
 3. Add download option
 4. Fuzzy city search
+5. Adapt for mobile view
