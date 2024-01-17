@@ -180,7 +180,7 @@ export default class York extends Component {
               <div className="home-icons-motto">
                 <div>
                   <a target="_blank" href="cv.pdf"><img height="50" src="cv.png"></img></a>
-                  <a target="_blank" href="https://github.com/ghostyusheng"><GithubOutlined style={{fontSize: '40px'}} /></a>
+                  <a target="_blank" href="https://github.com/ghostyusheng/Python-Node-E-Weather"><GithubOutlined style={{fontSize: '40px'}} /></a>
                 </div>
                 <div>
                   "If you afraid of failure, you won't get very far." - Steve Jobs<br/>
