@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
+import {Link} from 'react-router-dom';
 import { Input, Tabs } from 'antd';
 import { TabsProps } from 'antd';
 import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
@@ -141,6 +142,7 @@ export default class York extends Component {
                       actions={[
                       ]}
                     >
+                      <Link to="/detail">
                       <Meta
                         title={this.state.name}
                         description={<>
@@ -150,6 +152,7 @@ export default class York extends Component {
                           <div>{this.state.daily[0].temp.min+'℃~'+this.state.daily[0].temp.max+'℃'}</div>
                         </>}
                       />
+                    </Link>
                     </Card>
                     :
                     <></>
