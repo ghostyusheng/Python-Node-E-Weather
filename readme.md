@@ -113,6 +113,12 @@ curl https://api.openweathermap.org/data/3.0/onecall\?unit\=metric\&lat\=51.5073
 
 Weather User-Friendly Interface, Functions
 
+
+### Security
+
+1. Temporarily expose API key for coding review
+2. Set limit for daily request
+
 ### Todo List
 
 1. PYTHON production WSGI(current version like demo)
